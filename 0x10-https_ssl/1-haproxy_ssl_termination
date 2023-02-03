@@ -35,8 +35,8 @@ defaults
 
 frontend My_server
         bind *:80
-        bind *:443 ssl crt /etc/letsencrypt/live/lb-01.digivez.tech/fullchain.pem
-        http-request redirect scheme https code 301 if { hdr(Host) -i lb-01.digivez.tech } !{ ssl_fc }
+        bind *:443 ssl crt /etc/letsencrypt/live/www.digivez.tech/fullchain.pem
+        http-request redirect scheme https code 301 if { hdr(Host) -i www.digivez.tech } !{ ssl_fc }
         mode http
         default_backend web_server
 listen web_server
